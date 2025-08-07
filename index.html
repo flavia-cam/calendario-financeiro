@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendário Financeiro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Calendário Financeiro</h1>
+    <div class="calendar" id="calendar"></div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="transactionModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Adicionar Gasto</h2>
+      <p id="selectedDate"></p>
+      <form id="transactionForm">
+        <input type="text" id="description" placeholder="Descrição do gasto" required>
+        <input type="number" id="amount" placeholder="Valor (R$)" required>
+        <select id="paymentMethod" required>
+          <option value="">Forma de pagamento</option>
+          <option value="cartao">Cartão</option>
+          <option value="pix">PIX</option>
+          <option value="dinheiro">Dinheiro</option>
+        </select>
+        <input type="file" id="photo" accept="image/*">
+        <button type="submit">Salvar</button>
+      </form>
+
+      <h3>Transações do dia:</h3>
+      <ul id="transactionsList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
