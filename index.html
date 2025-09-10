@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Calendário Financeiro</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>Calendário Financeiro</h1>
-    <h2 id="monthYear"></h2>
+
+    <div class="calendar-header">
+      <button id="prevMonth" aria-label="Mês anterior">◀</button>
+      <h2 id="monthYear"></h2>
+      <button id="nextMonth" aria-label="Próximo mês">▶</button>
+      <button id="todayBtn" aria-label="Ir para hoje">Hoje</button>
+    </div>
+
     <div class="calendar" id="calendar"></div>
   </div>
 
@@ -19,16 +26,17 @@
       <span class="close" id="closeModal">&times;</span>
       <h2>Adicionar Gasto</h2>
       <p id="selectedDate"></p>
+
       <form id="transactionForm">
-        <input type="text" id="description" placeholder="Descrição do gasto" required>
-        <input type="number" id="amount" placeholder="Valor (R$)" required>
+        <input type="text" id="description" placeholder="Descrição do gasto" required />
+        <input type="number" id="amount" placeholder="Valor (R$)" step="0.01" required />
         <select id="paymentMethod" required>
           <option value="">Forma de pagamento</option>
           <option value="cartao">Cartão</option>
           <option value="pix">PIX</option>
           <option value="dinheiro">Dinheiro</option>
         </select>
-        <input type="file" id="photo" accept="image/*">
+        <input type="file" id="photo" accept="image/*" />
         <button type="submit">Salvar</button>
       </form>
 
