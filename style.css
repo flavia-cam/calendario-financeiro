@@ -10,11 +10,35 @@ body {
   padding: 20px;
 }
 
+.calendar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.calendar-header button {
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  background: #fff;
+}
+
 .calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: bold;
+  padding: 6px 0;
+  background: #f0f0f0;
+  border-radius: 4px;
 }
 
 .day {
@@ -26,6 +50,11 @@ body {
   position: relative;
 }
 
+.empty {
+  background: transparent;
+  border: none;
+}
+
 .day:hover {
   background-color: #eaeaea;
 }
@@ -34,19 +63,23 @@ body {
   font-weight: bold;
 }
 
-.transaction-indicator {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.day.today {
+  outline: 2px solid #2a9df4;
 }
 
-/* Cores por forma de pagamento */
-.cartao { background-color: blue; }
-.pix { background-color: purple; }
-.dinheiro { background-color: orange; }
+.transaction-indicator {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.cartao { background-color: #2b6ef6; }
+.pix { background-color: #8a2be2; }
+.dinheiro { background-color: #ff8a00; }
 
 /* Modal */
 .modal {
@@ -109,4 +142,15 @@ form input, form select, form button {
   max-width: 100%;
   margin-top: 5px;
   border-radius: 5px;
+}
+
+.transactions-delete {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 6px;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
 }
