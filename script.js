@@ -13,9 +13,11 @@ function createCalendar(date) {
   const year = date.getFullYear();
   const month = date.getMonth();
 
-  const firstDay = new Date(year, month, 1).getDay();
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-
+  const meses = [
+    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+  ];
+  document.getElementById("monthYear").innerText = `${meses[month]} de ${year}`;
   for (let i = 0; i < firstDay; i++) {
     calendar.appendChild(document.createElement("div"));
   }
