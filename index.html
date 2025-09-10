@@ -9,14 +9,7 @@
 <body>
   <div class="container">
     <h1>Calendário Financeiro</h1>
-
-    <div class="calendar-header">
-      <button id="prevMonth" aria-label="Mês anterior">◀</button>
-      <h2 id="monthYear"></h2>
-      <button id="nextMonth" aria-label="Próximo mês">▶</button>
-      <button id="todayBtn" aria-label="Ir para hoje">Hoje</button>
-    </div>
-
+    <h2 id="monthYear"></h2>
     <div class="calendar" id="calendar"></div>
   </div>
 
@@ -28,7 +21,7 @@
       <p id="selectedDate"></p>
       <form id="transactionForm">
         <input type="text" id="description" placeholder="Descrição do gasto" required>
-        <input type="number" id="amount" placeholder="Valor (R$)" step="0.01" required>
+        <input type="number" id="amount" placeholder="Valor (R$)" required>
         <select id="paymentMethod" required>
           <option value="">Forma de pagamento</option>
           <option value="cartao">Cartão</option>
