@@ -1,3 +1,4 @@
+/* básico */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -10,43 +11,80 @@ body {
   padding: 20px;
 }
 
+/* header do calendário */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.calendar-header button {
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  background: #fff;
+}
+
+/* grid do calendário */
 .calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 5px;
-  margin-top: 20px;
+  margin-top: 10px;
+  padding: 0 10px;
 }
 
+/* dias da semana */
+.weekday {
+  text-align: center;
+  font-weight: bold;
+  padding: 6px 0;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* células do calendário */
 .day {
   background-color: #fff;
   border: 1px solid #ccc;
-  padding: 15px;
+  padding: 8px;
   cursor: pointer;
-  height: 100px;
+  height: 90px;
   position: relative;
+  box-sizing: border-box;
 }
 
-.day:hover {
-  background-color: #eaeaea;
+.empty {
+  background: transparent;
+  border: none;
+  height: 90px;
 }
 
-.day-number {
-  font-weight: bold;
-}
+.day:hover { background-color: #eaeaea; }
 
+.day-number { font-weight: bold; }
+
+/* destaque do dia atual */
+.day.today { outline: 2px solid #2a9df4; }
+
+/* indicador de transação (bolinha) */
 .transaction-indicator {
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  width: 10px;
-  height: 10px;
+  bottom: 6px;
+  right: 6px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
+  border: 2px solid white;
 }
 
-/* Cores por forma de pagamento */
-.cartao { background-color: blue; }
-.pix { background-color: purple; }
-.dinheiro { background-color: orange; }
+/* cores por forma de pagamento */
+.cartao { background-color: #2b6ef6; }
+.pix { background-color: #8a2be2; }
+.dinheiro { background-color: #ff8a00; }
 
 /* Modal */
 .modal {
@@ -66,9 +104,10 @@ body {
   background-color: #fff;
   margin: auto;
   padding: 20px;
-  width: 320px;
+  width: 360px;
   position: relative;
   border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .close {
@@ -80,9 +119,7 @@ body {
   cursor: pointer;
 }
 
-.close:hover {
-  color: black;
-}
+.close:hover { color: black; }
 
 form input, form select, form button {
   width: 100%;
@@ -91,6 +128,7 @@ form input, form select, form button {
   box-sizing: border-box;
 }
 
+/* lista de transações */
 #transactionsList {
   list-style: none;
   padding: 0;
@@ -105,21 +143,20 @@ form input, form select, form button {
   border-radius: 5px;
 }
 
-/* Foto da transação */
+/* foto */
 .transaction-photo {
   max-width: 100%;
   margin-top: 5px;
   border-radius: 5px;
 }
 
-/* Cabeçalho da transação */
+/* header da transação - botão no topo direito */
 .transaction-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* Botão de excluir */
 .transactions-delete {
   background-color: #ff4d4d;
   border: none;
