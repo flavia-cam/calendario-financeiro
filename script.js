@@ -139,6 +139,7 @@ function showTransactions(dateKey) {
   }
 }
 
+
 function deleteTransaction(dateKey, index) {
   if (!transactions[dateKey]) return;
   transactions[dateKey].splice(index, 1);
