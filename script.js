@@ -120,24 +120,23 @@ function showTransactions(dateKey) {
       li.innerHTML = `
         <strong>${escapeHtml(t.description)}</strong><br>
         Valor: R$${Number(t.amount).toFixed(2)}<br>
-        Forma: ${escapeHtml(t.method.toUpperCase())}
+        Forma: ${escapeHtml(t.method.toUpperCase())}<br>
+        <button class="transactions-delete" data-index="${index}" data-date="${dateKey}">Excluir</button>
         ${t.photoUrl ? `<br><img src="${t.photoUrl}" class="transaction-photo">` : ''}
       `;
 
-      const del = document.createElement('button');
-      del.textContent = 'Excluir';
-      del.classList.add('transactions-delete');
-      del.addEventListener('click', () => {
+      // ligar o evento de clique no botão Excluir
+      li.querySelector(".transactions-delete").addEventListener("click", () => {
         deleteTransaction(dateKey, index);
       });
 
-      li.appendChild(del);
       transactionsList.appendChild(li);
     });
   } else {
     transactionsList.innerHTML = '<li>Nenhuma transação neste dia.</li>';
   }
 }
+
 
 
 function deleteTransaction(dateKey, index) {
