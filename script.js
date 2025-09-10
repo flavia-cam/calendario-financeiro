@@ -44,6 +44,12 @@ function createCalendar(date) {
     calendar.appendChild(dayDiv);
   }
 }
+function changeMonth(direction) {
+  currentDate.setMonth(currentDate.getMonth() + direction);
+  createCalendar(currentDate);
+}
+
+
 
 function openModal(dateKey) {
   selectedDateText.textContent = `Data: ${dateKey}`;
