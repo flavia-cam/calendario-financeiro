@@ -9,18 +9,16 @@
 <body>
   <div class="container">
     <h1>Calendário Financeiro</h1>
-     <h2 id="monthYear"></h2> <!-- Aqui vai aparecer o mês/ano -->
-  <div class="calendar" id="calendar"></div>
-  </div>
-  
-  <div class="container">
-  <h1>Calendário Financeiro</h1>
-  <button onclick="changeMonth(-1)">◀</button>
-  <span id="monthYear"></span>
-  <button onclick="changeMonth(1)">▶</button>
-  <div class="calendar" id="calendar"></div>
-</div>
 
+    <div class="calendar-header">
+      <button id="prevMonth" aria-label="Mês anterior">◀</button>
+      <h2 id="monthYear"></h2>
+      <button id="nextMonth" aria-label="Próximo mês">▶</button>
+      <button id="todayBtn" aria-label="Ir para hoje">Hoje</button>
+    </div>
+
+    <div class="calendar" id="calendar"></div>
+  </div>
 
   <!-- Modal -->
   <div class="modal" id="transactionModal">
@@ -30,7 +28,7 @@
       <p id="selectedDate"></p>
       <form id="transactionForm">
         <input type="text" id="description" placeholder="Descrição do gasto" required>
-        <input type="number" id="amount" placeholder="Valor (R$)" required>
+        <input type="number" id="amount" placeholder="Valor (R$)" step="0.01" required>
         <select id="paymentMethod" required>
           <option value="">Forma de pagamento</option>
           <option value="cartao">Cartão</option>
@@ -49,4 +47,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
